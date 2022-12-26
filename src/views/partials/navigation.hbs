@@ -20,28 +20,45 @@
     
     <div class="containerClima" id="clima"></div>
     
-    <div class="containerButtonsRegLog">
-      <ul class="ulButtonsRegLog">
-        <a class="btn containerButtonsRegLog"
+    <ul class="containerButtonPerfil">
+      <li class="buttonPerfil">
+        <a class="btn containerButtonPerfil"
           type="button"
           id="dropdownMenu2"
           data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false">
           Perfil
-        </a>{{#if userLog}}<li class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a class="dropdown-item" href="/notes">Notas</a>
-            <a class="dropdown-item" href="/notes/add">Nueva Nota</a>
-            <a class="dropdown-item" href="/users/logout">Logout</a>
+        </a>
+        
+          {{#if userLog}}
+        
+        <ul class="dropDown">
+          <li class="itemDrop">
+            <a class="navLink" href="/notes">Noticias</a>
           </li>
+          
+          <li class="itemDrop">
+            <a class="navLink" href="/notes/add">Nueva Noticia</a>
+          </li>
+          
+          <li class="itemDrop">
+            <a class="navLink" href="/users/logout">Salir</a>
+          </li>
+        </ul>
         {{else}}
-          <li class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <a href="/users/signin" class="nav-link">Sign-In</a>
-            <a href="/users/signup" class="nav-link">Sign-Up</a>
-          </li>
+          
+          <ul class="dropDown">
+            <li class="itemDrop">
+              <a href="/users/signin" class="navLink">Ingresar</a>
+            </li>
+            <li class="itemDrop">
+              <a href="/users/signup" class="navLink">Registrarse</a>
+            </li>
+          </ul>
         {{/if}}
-      </ul>
-    </div>
+      </li>
+    </ul>
   </div>
 </header>
 

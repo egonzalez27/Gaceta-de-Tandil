@@ -1,20 +1,32 @@
-<div class="row">
-    <h1> Hello {{ userLog.user }} </h1>
+<div class="containerAllNews">
+    <div class="userLogIn">
+        <h1> Hello {{ userLog.user }} </h1>
+    </div><br>
     {{#each notes}}
-        <div class="col-md-3">
-            <div class="card">
-                <div class="card-body">
-                    <h3 class="card-title d-flex justify-content-between align-item-center">
-                        Titulo: {{title}} <a href="/notes/edit/{{_id}}"><ion-icon name="create-outline"></ion-icon></a>
+        <div class="containerNews">
+            <div class="news">
+                <div class="newsProps">
+
+                    <a class="buttonEdit" href="/notes/edit/{{_id}}"><ion-icon name="create-outline"></ion-icon><h4>Editar<h4></a>
+                
+                    <h3 class="containerTitleView">
+                        <a class="titleProps">Titulo:</a> {{title}}</h3>
+
+                    <h3 class="containerSubtitleView">
+                        <a class="titleProps">Bajada:</a> {{subtitle}}</h3>
+
+                    <h3 class="containerSectionView">
+                        <a class="titleProps">Sección:</a> {{section}}</h3>
+
+                    <h3 class="containerDescriptionView">
+                        <a class="titleProps">Desarrollo:</a> {{description}}
                     </h3>
-                    <h4 class="card-title d-flex justify-content-between align-item-center">Subtitle: {{subtitle}}</h4>
-                    <p>
-                        Descripción: {{description}}
-                    </p>
+
                     <form action="/notes/delete/{{_id}}?_method=DELETE" method="POST">
                         <input type="hidden" name="_method" value="DELETE">
                         <button class="btn btn-danger btn-sm" type = "submit">Borrar</button>
                     </form>
+
                 </div>
             </div>
         </div>

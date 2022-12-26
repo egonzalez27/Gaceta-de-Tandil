@@ -43,11 +43,11 @@ router.get('/notes/edit/:id', isAuthenticated, async (req, res) => {
     res.render('notes/edit-notes', { note });
 });
 
-router.get('/pages/pageNews.html', isAuthenticated, async (req, res) => {
+router.get('/pages/pageNews.html', async (req, res) => {
     res.render('notes/noticia');
 })
 
-router.get('/pages/sections.hbs', isAuthenticated, async (req, res) => {
+router.get('/pages/sections.hbs', async (req, res) => {
     res.render('notes/sections');
 })
 
